@@ -38,6 +38,16 @@
     width: 60px; /* Adjust the icon size as needed */
     height: auto;
 }
+.fly-in {
+    opacity: 0;
+    transform: translateX(-100px); /* Start off-screen */
+    transition: opacity 0.9s ease-out, transform 0.6s ease-out;
+}
+
+.fly-in.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
 
     </style>
     <!-- Smartsupp Live Chat script -->
@@ -120,13 +130,13 @@
                     <div class="col-xl-6 col-md-12">
                         <div class="banner__left">
                             <div class="block-text">
-                                <h2 class="heading">We help
+                                <h2 class="heading fly-in">We help
                                     You Grow Your <br><span class="s1 arlo_tm_animation_text_word"></span> <br>
                                 </h2>
-                                <p class="desc">lynx Investment Management is your premier destination for crypto investments, providing you with the tools and expertise to grow your wealth in the world of cryptocurrencies.</p>
+                                <p class="desc fly-in">lynx Investment Management is your premier destination for crypto investments, providing you with the tools and expertise to grow your wealth in the world of cryptocurrencies.</p>
 
-                                <a href="/dashboard/user/sign-in.html" class="action-btn"><span>Sign IN</span></a>
-                                <a href="/dashboard/user/sign-up.html" class="action-btn"><span>Sign UP</span></a>
+                                <a href="/dashboard/user/sign-in.html" class="action-btn fly-in"><span>Sign IN</span></a>
+                                <a href="/dashboard/user/sign-up.html" class="action-btn fly-in"><span>Sign UP</span></a>
                             </div>
 
                             <div class="pay">
@@ -394,56 +404,77 @@
   </div>
   <!-- TradingView Widget END -->
                     </div>
+                    
                     <div class="col-xl-3 col-md-6">
-                        <div class="speciality-box" data-aos="fade-up" data-aos-duration="2800">
-                            <div class="icon">
-                                <svg width="48" height="42" viewBox="0 0 48 42" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M9.99935 4.66667C9.99935 2.08934 12.0887 0 14.666 0H33.3327C35.9101 0 37.9994 2.08934 37.9994 4.66667V7H9.99935V4.66667ZM5.33268 15.1667C5.33268 12.5893 7.42202 10.5 9.99935 10.5H37.9994C40.5768 10.5 42.666 12.5893 42.666 15.1667V17.5H5.33268V15.1667ZM0.666016 25.6667C0.666016 23.0893 2.75535 21 5.33268 21H42.666C45.2434 21 47.3327 23.0893 47.3327 25.6667V32.6667C47.3327 37.8212 43.1539 42 37.9994 42H9.99935C4.84469 42 0.666016 37.8212 0.666016 32.6667V25.6667ZM17.5827 28C17.5827 27.0335 18.3662 26.25 19.3327 26.25H28.666C29.6325 26.25 30.416 27.0335 30.416 28C30.416 28.9665 29.6325 29.75 28.666 29.75H19.3327C18.3662 29.75 17.5827 28.9665 17.5827 28Z"
-                                        fill="url(#paint0_linear_939_156)" />
-                                    <defs>
-                                        <linearGradient id="paint0_linear_939_156" x1="23.9993" y1="0" x2="23.9993"
-                                            y2="42" gradientUnits="userSpaceOnUse">
-                                            <stop offset="1" stop-color="white" />
-                                            <stop offset="1" stop-color="white" stop-opacity="0.5" />
-                                        </linearGradient>
-                                    </defs>
-                                </svg>
-                            </div>
-                            <h5 class="title">Cutting-Edge Technology </h5>
-                            <p>Benefit from the latest advancements in crypto trading and portfolio management.
-                            </p>
-                            <h3 class="number">03</h3>
-                        </div>
+                        <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+    {
+    "symbol": "NASDAQ:META",
+    "width": 350,
+    "height": 220,
+    "locale": "en",
+    "dateRange": "12M",
+    "colorTheme": "dark",
+    "isTransparent": false,
+    "autosize": false,
+    "largeChartUrl": ""
+  }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
                     </div>
                     <div class="col-xl-3 col-md-6">
-                        <div class="speciality-box" data-aos="fade-up" data-aos-duration="3000">
-                            <div class="icon">
-                                <svg width="42" height="48" viewBox="0 0 42 48" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M42 19.6841V37.9226C42 43.1201 37.8212 47.3334 32.6667 47.3334H9.33333C4.17867 47.3334 0 43.1201 0 37.9226V19.6841C0 16.8586 1.25916 14.1826 3.42967 12.3953L15.0963 2.78856C18.532 -0.0405116 23.468 -0.040535 26.9036 2.78856L38.5702 12.3953C40.7409 14.1826 42 16.8586 42 19.6841ZM28.5833 36.2501V41.5001C28.5833 42.7888 27.5387 43.8334 26.25 43.8334H15.75C14.4613 43.8334 13.4167 42.7888 13.4167 41.5001V36.2501C13.4167 32.062 16.8119 28.6667 21 28.6667C25.1881 28.6667 28.5833 32.062 28.5833 36.2501Z"
-                                        fill="url(#paint0_linear_939_899)" />
-                                    <defs>
-                                        <linearGradient id="paint0_linear_939_899" x1="21" y1="0.666748" x2="21"
-                                            y2="47.3334" gradientUnits="userSpaceOnUse">
-                                            <stop offset="1" stop-color="white" />
-                                            <stop offset="1" stop-color="white" stop-opacity="0.5" />
-                                        </linearGradient>
-                                    </defs>
-                                </svg>
-                            </div>
-                            <h5 class="title">Big Community Support</h5>
-                            <p>Join our thriving community of crypto enthusiasts to share knowledge and experiences.
-                            </p>
-                            <h3 class="number">04</h3>
-                        </div>
+                        <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+    {
+    "symbol": "NASDAQ:GOOGL",
+    "width": 350,
+    "height": 220,
+    "locale": "en",
+    "dateRange": "12M",
+    "colorTheme": "dark",
+    "isTransparent": false,
+    "autosize": false,
+    "largeChartUrl": ""
+  }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
                     </div>
                 </div>
             </div>
         </section>
-
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container" style="height:100%;width:100%">
+    <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%"></div>
+    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+    {
+    "autosize": true,
+    "symbol": "NASDAQ:AAPL",
+    "interval": "D",
+    "timezone": "exchange",
+    "theme": "light",
+    "backgroundColor": "rgba(255, 255, 255, 1)",
+    "style": "0",
+    "locale": "en",
+    "allow_symbol_change": true,
+    "calendar": false,
+    "support_host": "https://www.tradingview.com",
+    "withdateranges": true,
+    "save_image": false,
+    "details": true,
+    "hotlist": true
+  }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
         <section class="portfolio">
             <div class="shape"></div>
             <div class="container">
@@ -1000,7 +1031,21 @@
     <script src="app/js/swiper.js"></script>
 
     <!-- Initialize Swiper -->
-
+    <script>document.addEventListener("DOMContentLoaded", () => {
+        const elements = document.querySelectorAll(".fly-in");
+    
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target); // Stop observing once it's visible
+                }
+            });
+        }, { threshold: 0.2 });
+    
+        elements.forEach(element => observer.observe(element));
+    });
+    </script>
 
 </body>
 
